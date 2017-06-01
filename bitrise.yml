@@ -14,8 +14,7 @@ workflows:
             set -ex
 
             brew cask install virtualbox
-            brew cask install docker
-            ln -s /Applications/Docker.app/Contents/Resources/bin/* /usr/local/bin
+            brew cask install docker-toolbox
     - script@1.1.3:
         title: docker version
         inputs:
@@ -23,7 +22,7 @@ workflows:
             #!/bin/bash
             set -ex
 
-            docker version
+            docker --version
     - script@1.1.3:
         title: docker run hello-world
         inputs:
